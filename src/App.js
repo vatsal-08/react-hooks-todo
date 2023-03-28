@@ -1,15 +1,25 @@
-import "./App.css";
-import TodoForm from "./components/TodoForm";
-import { Typography } from "@mui/material";
-const App = () => {
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
   return (
     <div className="App">
-      <Typography component="h1" variant="h2">
-        Todos
-      </Typography>
-      <TodoForm saveTodo={console.warn} />
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
-};
+}
 
 export default App;
