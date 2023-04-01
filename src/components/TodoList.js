@@ -8,8 +8,8 @@ import {
   IconButton,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-
-const TodoList = ({ todos, deleteTodo }) => (
+import EditIcon from "@mui/icons-material/Edit";
+const TodoList = ({ todos, deleteTodo, editTodo }) => (
   <List>
     {todos.map((todo, index) => (
       <ListItem key={index.toString()} dense button>
@@ -23,6 +23,14 @@ const TodoList = ({ todos, deleteTodo }) => (
             }}
           >
             <DeleteIcon />
+          </IconButton>
+          <IconButton
+            aria-label="Edit"
+            onClick={() => {
+              editTodo(index);
+            }}
+          >
+            <EditIcon />
           </IconButton>
         </ListItemSecondaryAction>
       </ListItem>

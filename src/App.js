@@ -6,7 +6,8 @@ import { Typography } from "@mui/material";
 import useTodoState from "./components/useTodoState";
 
 const App = () => {
-  const { todos, addTodo, deleteTodo } = useTodoState([]);
+  const { todos, addTodo, deleteTodo, editTodo } = useTodoState([]);
+
   return (
     <div className="App">
       <Typography component="h1" variant="h2">
@@ -22,7 +23,7 @@ const App = () => {
           }
         }}
       />
-      <TodoList todos={todos} deleteTodo={deleteTodo} />
+      <TodoList todos={todos} deleteTodo={deleteTodo} editTodo={editTodo} />
     </div>
   );
 };

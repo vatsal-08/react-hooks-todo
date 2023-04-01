@@ -10,5 +10,11 @@ export default (initialValue) => {
       const newTodos = todos.filter((_, index) => index !== todoIndex);
       setTodos(newTodos);
     },
+    editTodo: (editIndex) => {
+      const editTodos = todos.filter((_, index) => index === editIndex);
+      // setTodos(newTodos);
+      const newTodos = todos.filter((_, index) => index !== editIndex);
+      setTodos(newTodos);
+    },
   };
 };
