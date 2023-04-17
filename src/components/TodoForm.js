@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import useInputState from "./useInputState";
-const TodoForm = ({ saveTodo }) => {
-  const { value, onChange, reset } = useInputState("");
+const TodoForm = ({ saveTodo, value, onChange,reset }) => {
+  // const { value, onChange, reset } = useInputState("");
   return (
     <form
       onSubmit={(event) => {

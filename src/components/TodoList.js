@@ -26,8 +26,8 @@ const TodoList = ({ todos, deleteTodo, editTodo }) => (
           </IconButton>
           <IconButton
             aria-label="Edit"
-            onClick={() => {
-              editTodo(index);
+            onClick={(e) => {
+              editTodo(e, index);
             }}
           >
             <EditIcon />
