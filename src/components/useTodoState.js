@@ -20,7 +20,7 @@ export default (initialValue) => {
       console.log(editingConfig?.ind);
       // const editTodos = todos.filter((_, index) => index === editIndex);
       // setTodos(newTodos);
-      // const newTodos = todos.filter((_, index) => index !== editIndex);
+      // // const newTodos = todos.filter((_, index) => index !== editIndex);
       // setTodos(newTodos);
     },
     saveTodo: (todoText) => {
