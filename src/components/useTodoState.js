@@ -17,7 +17,8 @@ export default (initialValue) => {
     editTodo: (e, editIndex) => {
       e.preventDefault();
       setEditingConfig({ ind: editIndex });
-      console.log(editingConfig?.ind);
+      // console.log(editingConfig?.ind);
+      console.log(todos[editingConfig?.ind]);
       // const editTodos = todos.filter((_, index) => index === editIndex);
       // setTodos(newTodos);
       // // const newTodos = todos.filter((_, index) => index !== editIndex);
