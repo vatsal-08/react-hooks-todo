@@ -4,7 +4,6 @@ import {
   ListItem,
   ListItemText,
   ListItemSecondaryAction,
-  Checkbox,
   IconButton,
   TextField,
 } from "@mui/material";
@@ -48,9 +47,9 @@ const TodoList = ({ todos, deleteTodo }) => {
           key={index.toString()}
           dense
           button
-          style={{ backgroundColor: index === editIndex ? "#E0E0E0" : "white" }}
+          style={{ backgroundColor: index === editIndex ? "#E0E0E0" : "white",
+        paddingLeft: "144px"}}
         >
-          <Checkbox tabIndex={-1} disableRipple />
           {index === editIndex ? (
             <TextField
               inputRef={inputRef}
