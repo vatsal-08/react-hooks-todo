@@ -11,7 +11,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import SaveIcon from "@mui/icons-material/Save";
 
-const TodoList = ({ todos, deleteTodo }) => {
+const TodoList = ({ todos, deleteTodo, editTodo }) => {
   const [editIndex, setEditIndex] = useState(-1);
   const [editText, setEditText] = useState("");
   const inputRef = useRef(null);
@@ -22,8 +22,7 @@ const TodoList = ({ todos, deleteTodo }) => {
   };
 
   const handleSaveEdit = (index) => {
-    // Implement your save edit logic here
-    // You can use the index and updated text to modify the todo item
+    editTodo(index, editText);
     setEditIndex(-1);
     setEditText("");
   };
@@ -41,14 +40,16 @@ const TodoList = ({ todos, deleteTodo }) => {
   }, [editIndex]);
 
   return (
-    <List>
+    <List width="30%">
       {todos.map((todo, index) => (
         <ListItem
           key={index.toString()}
           dense
           button
-          style={{ backgroundColor: index === editIndex ? "#E0E0E0" : "white",
-        paddingLeft: "144px"}}
+          style={{
+            backgroundColor: index === editIndex ? "#E0E0E0" : "white",
+            paddingLeft: "144px",
+          }}
         >
           {index === editIndex ? (
             <TextField
@@ -58,9 +59,10 @@ const TodoList = ({ todos, deleteTodo }) => {
               value={editText}
               onChange={(event) => setEditText(event.target.value)}
               onKeyDown={(event) => handleKeyDown(event, index)}
+              size="medium"
             />
           ) : (
-            <ListItemText primary={todo} />
+            <ListItemText primary={todo} size="medium" />
           )}
           <ListItemSecondaryAction>
             {index === editIndex ? (

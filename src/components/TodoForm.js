@@ -5,14 +5,16 @@ import useInputState from "./useInputState";
 const TodoForm = ({ saveTodo }) => {
   const { value, onChange, reset } = useInputState("");
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (value.trim() !== "") {
+      saveTodo(value);
+    }
+    reset();
+  };
+
   return (
-    <form
-      onSubmit={(event) => {
-        event.preventDefault();
-        saveTodo(value);
-        reset();
-      }}
-    >
+    <form onSubmit={handleSubmit}>
       <TextField
         variant="outlined"
         placeholder="Add todo"
